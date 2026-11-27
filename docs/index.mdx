@@ -1,0 +1,27 @@
+---
+title: Tenant Search
+description: Tenant-isolated document search on Cloudflare Workers
+---
+
+# Tenant Search
+
+Tenant Search is a Cloudflare Worker that provisions isolated AI Search instances and document stores for each tenant.
+
+Tenant isolation is enforced with the `x-tenant-id` request header. The header value is normalized to lowercase and used to create a tenant-specific instance ID and R2 folder prefix.
+
+## Key capabilities
+
+- Onboard a tenant
+- Upload documents
+- Search tenant documents
+- Offboard a tenant and delete its data
+
+## Tenant header
+
+Every request must include:
+
+```http
+x-tenant-id: acme
+```
+
+Tenant IDs must contain only lowercase letters, numbers, and hyphens and fit within an AI Search instance ID.

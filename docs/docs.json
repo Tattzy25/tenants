@@ -1,0 +1,19 @@
+{
+  "$schema": "https://context7.com/schema/docs7.json",
+  "name": "Tenant Search",
+  "colors": {
+    "primary": "#F6821F"
+  },
+  "navigation": {
+    "groups": [
+      {
+        "group": "Get Started",
+        "pages": ["index"]
+      },
+      {
+        "group": "API",
+        "pages": ["api"]
+      }
+    ]
+  }
+}

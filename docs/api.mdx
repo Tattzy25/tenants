@@ -1,0 +1,45 @@
+---
+title: API
+description: Tenant Search HTTP API reference
+---
+
+# API
+
+All endpoints require `x-tenant-id`.
+
+## Onboard a tenant
+
+```http
+POST /onboard
+x-tenant-id: acme
+```
+
+Creates the tenant's AI Search instance with an R2 source scoped to `customers/acme/**`.
+
+## Upload a document
+
+```http
+POST /upload
+x-tenant-id: acme
+Content-Type: multipart/form-data
+```
+
+Include the document in a form field named `file`.
+
+## Search documents
+
+```http
+GET /search?q=service-level-agreement
+x-tenant-id: acme
+```
+
+Search is restricted to `customers/acme/**`.
+
+## Offboard a tenant
+
+```http
+DELETE /offboard
+x-tenant-id: acme
+```
+
+Deletes the tenant's AI Search instance and its associated data.
